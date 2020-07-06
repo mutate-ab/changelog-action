@@ -1,0 +1,25 @@
+name: 'Changelog'
+description: 'Verifies that a changelog entry has been added to a PR'
+inputs:
+  ignoreLabel:  # id of input
+    description: 'Label to indicate that a missing changelog entry should be ignored'
+    required: true
+    default: 'no-changelog'
+  changelogType:
+    description: 'The type of changelog check that should be performed, valid values are: file, folder, both'
+    required: true
+    default: 'both'
+  changelogFilePath:
+    description: 'The path to your changelog file'
+    required: false
+    default: 'CHANGELOG.md'
+  changelogDirectoryPath:
+    description: 'The path to your changelog folder'
+    required: false
+    default: 'docs/changelog/'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'check-square'
+  color: 'orange'
