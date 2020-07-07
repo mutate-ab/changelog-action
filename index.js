@@ -38,7 +38,7 @@ async function run() {
                 }
             }
             if (changelogType == 'both' || changelogType == 'folder') {
-                if (f.filename.startswith(changelogDirectoryPath)) {
+                if (f.filename.startsWith(changelogDirectoryPath)) {
                     found = true
                 }
             }
