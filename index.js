@@ -21,10 +21,11 @@ async function run() {
             return;
         }
 
+        const repository = github.context.payload.repository
         const token = core.getInput('githubToken', {required: true})
         const files = await github.getOctokit(token).pulls.listFiles({
-            "owner": pullRequest.repo.owner.login,
-            "repo": pullRequest.repo.name,
+            "owner": repository.owner.login,
+            "repo": repository.name,
             "pull_number": pullRequest.number,
             "per_page": 1000
         })
