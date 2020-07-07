@@ -17,6 +17,9 @@ inputs:
     description: 'The path to your changelog folder'
     required: false
     default: 'docs/changelog/'
+  githubToken:
+    description: "The token to use for GitHub API requests"
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'
