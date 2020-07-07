@@ -31,7 +31,7 @@ async function run() {
         })
 
         found = false;
-        files.forEach((f) => {
+        files.data.forEach((f) => {
             if (changelogType == 'both' || changelogType == 'file') {
                 if (f.filename == changelogFilePath) {
                     found = true;
