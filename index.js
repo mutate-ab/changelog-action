@@ -1,6 +1,5 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
-const exec = require('@actions/exec')
 
 // Looks for a label with the name from 
 async function run() {
