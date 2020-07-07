@@ -17,7 +17,7 @@ async function run() {
 
         const pullRequest = github.context.payload.pull_request
         const labelNames = pullRequest.labels.map(l => l.name)
-        if (labelNames.includes(skipLabel)) {
+        if (labelNames.includes(ignoreLabel)) {
             return;
         }
 
