@@ -45,7 +45,13 @@ async function run() {
         })
 
         if ( ! found) {
-            throw new Error(`No update to ${changeLogPath} found!`)
+            if (changelogType == 'both') {
+                throw new Error(`No update to ${changelogFilePath} or ${changelogDirectoryPath} found!`)
+            } else if (changelogType == 'file') {
+                throw new Error(`No update to ${changelogFilePath} found!`)
+            } else if (changelogType == 'folder') {
+                throw new Error(`No update to ${changelogDirectoryPath} found!`)
+            }
         }
     } catch(error) {
         core.setFailed(error.message);
